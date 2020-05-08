@@ -38,7 +38,7 @@ export_to_csv.short_description = 'Export to CSV'
 
 @admin.register(Car)
 class CarAdmin(ImportExportModelAdmin):
-    list_display = ['brand', 'model', 'fuel_type', 
+    list_display = ['brand', 'model', 'year', 'fuel_type', 
                     'transmission', 'power', 'seats',
                     'price']
     list_filter = ['brand', 'model']

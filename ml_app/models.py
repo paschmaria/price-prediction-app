@@ -26,7 +26,7 @@ class Car(models.Model):
     price = models.DecimalField(_("car price (N)"), max_digits=12, decimal_places=2)
 
     class Meta:
-        ordering = ('brand', 'model')
+        ordering = ('brand', 'model', 'year')
         index_together = (('id', 'slug'),)
 
     def __str__(self):
