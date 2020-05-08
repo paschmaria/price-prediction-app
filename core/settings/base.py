@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'ml_app.apps.MLAppConfig',
 
     # installed apps
+    'import_export',
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_tracking',
@@ -131,3 +132,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# django import-export settings
+IMPORT_EXPORT_USE_TRANSACTIONS = True

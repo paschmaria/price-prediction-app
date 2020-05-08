@@ -1,3 +1,5 @@
+from uuid import uuid4
+
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.utils.translation import gettext_lazy as _
@@ -36,5 +38,6 @@ class Car(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = self.get_slug()
+            slug = self.get_slug()
+            self.slug = f"{slug}-{str(uuid4()).split('-')[0]}"
         return super().save(*args, **kwargs)

@@ -3,6 +3,7 @@ import datetime
 
 from django.contrib import admin
 from django.http import HttpResponse
+from import_export.admin import ImportExportModelAdmin
 
 from .models import Car
 
@@ -36,7 +37,7 @@ export_to_csv.short_description = 'Export to CSV'
 
 
 @admin.register(Car)
-class CarAdmin(admin.ModelAdmin):
+class CarAdmin(ImportExportModelAdmin):
     list_display = ['brand', 'model', 'fuel_type', 
                     'transmission', 'power', 'seats',
                     'price']
