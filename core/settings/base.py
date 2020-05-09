@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'ml_app.apps.MLAppConfig',
 
     # installed apps
+    'djoser',
     'import_export',
     'rest_framework',
     'rest_framework.authtoken',
@@ -133,6 +134,18 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
+# installed apps
 # django import-export settings
 IMPORT_EXPORT_USE_TRANSACTIONS = True
+
+# drf
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+}
+
+
+# custom settings
+BASELINE_R2_SCORE = 0.95

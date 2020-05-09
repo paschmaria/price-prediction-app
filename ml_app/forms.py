@@ -6,9 +6,10 @@ class UsedCarForm(forms.Form):
     Forms for validating car record
     """
 
+    price_date = forms.DateField()
     name = forms.CharField(max_length=225)
     location = forms.CharField(max_length=100)
-    year = forms.IntegerField(min_value=1885) # when the first car was made
+    year = forms.IntegerField(min_value=1885) # min value: when the first car was ever made
     km_driven = forms.IntegerField(min_value=0)
     fuel_type = forms.CharField(max_length=50)
     transmission = forms.CharField(max_length=50)
