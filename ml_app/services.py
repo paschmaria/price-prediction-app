@@ -1,17 +1,17 @@
-from datetime import datetime
 import logging
+from datetime import datetime
 
 import numpy as np
 import pandas as pd
-import joblib
 
 from .constants import ONE_HOT_ENCODED_COLUMNS
-from .exceptions import PreprocessingException, PredictionException
+from .exceptions import PredictionException
 from .forms import UsedCarForm
+from .mixins import GetModelMixin
 from .utils import process_name
 
 
-class GetPredictions:
+class GetPredictions(GetModelMixin):
     """
     Process data from request object and return prediction
     """
@@ -59,18 +59,6 @@ class GetPredictions:
             data_dict[key.capitalize()] = [data[key]]
 
         return date, data_dict
-
-    def get_model(self, date):
-        year = date.year
-        month = date.month
-        day = date.day
-
-        try:
-            model = joblib.load(f'./models/{year}_{month}_{day}.pkl')
-        except FileNotFoundError:
-            raise PredictionException
-        
-        return model
 
     def predict(self):
         resp = self.validate(self.data)

@@ -10,6 +10,7 @@ class Car(models.Model):
     Instance of used car
     """
 
+    created = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(max_length=200, unique=True)
     brand = models.CharField(_("car brand"), max_length=50)
     model = models.CharField(_("car model"), max_length=50)

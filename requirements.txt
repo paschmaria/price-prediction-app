@@ -12,7 +12,6 @@ Django==3.0.6
 django-import-export==2.1.0
 django-templated-mail==1.1.1
 djangorestframework==3.11.0
-djoser==2.0.3
 drf-api-tracking==1.6.0
 et-xmlfile==1.0.1
 importlib-metadata==1.6.0

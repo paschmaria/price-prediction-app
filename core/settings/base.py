@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'ml_app.apps.MLAppConfig',
 
     # installed apps
-    'djoser',
     'import_export',
     'rest_framework',
     'rest_framework.authtoken',
