@@ -68,18 +68,18 @@ class GetPredictions(GetModelMixin):
             
         # get desired price date
         date = resp.get('date')
-        date = datetime.strptime(date)
         
         try:
             lr = self.get_model(date)
         except PredictionException:
-            return { 'errors': f'no price prediction was gotten \
-                                    for {date.strftime("%Y/%d/%m")}' }
+            return { 'errors': f'no price prediction was gotten for {date.strftime("%Y/%d/%m")}' }
         
         # get preprocessed data
         data = resp.get('data')
+        print(data.keys())
         # convert to dataframe
         X = pd.DataFrame.from_dict(data)
+        print(X.columns)
         # get predictions
         y_pred_log = lr.predict(X)
         # get inverse of log transformation

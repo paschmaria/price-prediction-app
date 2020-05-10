@@ -1,5 +1,5 @@
 def clean_name(name):
-    
+
     # join the words 'Land Rover' together to form one word
     if f"{name[0]} {name[1]}" == "Land Rover":
         return f"{name[0]}-{name[1]} {' '.join(name[2:])}"
@@ -35,6 +35,7 @@ def process_name(name):
 
 
 # {
+# "price_date": "05/09/2020",
 # "name": "Maruti Alto K10 LXI CNG",
 # "location": "Delhi",
 # "year": 2014,

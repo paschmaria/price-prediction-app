@@ -41,5 +41,5 @@ class CarAdmin(ImportExportModelAdmin):
     list_display = ['brand', 'model', 'year', 'fuel_type', 
                     'transmission', 'power', 'seats',
                     'price']
-    list_filter = ['brand', 'model']
+    list_filter = ['brand', 'model', 'location']
     actions = [export_to_csv]

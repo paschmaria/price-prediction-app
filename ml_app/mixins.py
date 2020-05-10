@@ -14,7 +14,7 @@ class GetModelMixin:
         day = date.day
 
         try:
-            model = joblib.load(f'./models/{year}_{month}_{day}.pkl')
+            model = joblib.load(f'./models/{year}_{month:02d}_{day:02d}.pkl')
         except FileNotFoundError:
             raise PredictionException
         
