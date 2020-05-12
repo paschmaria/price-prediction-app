@@ -28,7 +28,7 @@ git clone https://github.com/paschmaria/price-prediction-app.git
 cd price-prediction-app
 ```
 
-Setup a virtual environment
+Setup a virtual environment (Ubuntu OS)
 ```
 virtualenv venv
 
