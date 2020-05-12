@@ -32,19 +32,3 @@ def process_name(name):
     name = name.split()
     brand, model, variant = name[0], name[1], " ".join(name[2:])
     return brand, model, variant
-
-
-# {
-# "price_date": "05/09/2020",
-# "name": "Maruti Alto K10 LXI CNG",
-# "location": "Delhi",
-# "year": 2014,
-# "km_driven": 40929,
-# "fuel_type": "CNG",
-# "transmission": "Manual",
-# "owner_type": "First",
-# "mileage": 32.26,
-# "engine": 998,
-# "power": 58.2,
-# "seats": 4
-# }

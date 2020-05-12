@@ -76,10 +76,8 @@ class GetPredictions(GetModelMixin):
         
         # get preprocessed data
         data = resp.get('data')
-        print(data.keys())
         # convert to dataframe
         X = pd.DataFrame.from_dict(data)
-        print(X.columns)
         # get predictions
         y_pred_log = lr.predict(X)
         # get inverse of log transformation
